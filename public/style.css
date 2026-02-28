@@ -1,0 +1,400 @@
+.page {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #181818;
+  margin: 0;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #1f1f1f;
+  color: #cacaca;
+  padding: 20px;
+  border-bottom: 2px solid #525252;
+  position: sticky;
+  top: 0;
+}
+
+.header__title {
+  margin: 0;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.nav {
+  margin-top: 10px;
+}
+
+.nav__link {
+  color: #ecf0f1;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav__link:hover {
+  text-decoration: underline;
+  color: #f39c12;
+}
+
+.nav__link--active {
+  font-weight: bold;
+  color: #f39c12;
+}
+
+.nav__separator {
+  color: #525252;
+  margin: 0 8px;
+}
+
+.layout{
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 16px;
+  padding: 16px;
+}
+
+@media (max-width: 1168px){
+.layout{
+    grid-template-columns: 1fr;
+    display: flex;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+
+.card {
+  background: #272727;
+  color: #cacaca;
+  border-radius: 12px;
+  padding: 16px 24px;
+  border: 2px solid #525252;
+  box-shadow: 0 4px 8px rgba(48,48,48,0.3);
+}
+
+.card_type_highlighted {
+  border-color: #f39c12;
+}
+
+.card__title {
+  margin: 0 0 16px 0;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: #ecf0f1;
+}
+
+.card__text {
+  margin: 2px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.card__accent {
+  color: #f39c12;
+}
+
+.card__figure {
+  margin: 16px auto;
+}
+
+.card__image {
+  width: 40%;
+  max-width: 400px;
+}
+
+.card__caption {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+.equipment-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: #313131;
+  color: #cacaca;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 0;
+  gap: 4px;
+  list-style: none;
+}
+
+@media (max-width: 768px){
+  .equipment-list{
+    grid-template-columns: 1fr;
+  }
+}
+
+.equipment-list__item {
+  background: #272727;
+  color: #cacaca;
+  border-radius: 12px;
+  padding: 16px 24px;
+  border: 2px solid #525252;
+}
+
+.equipment-list__item_status_working strong {
+  color: #2ecc71;
+}
+
+.equipment-list__item_status_idle strong {
+  color: #f39c12;
+}
+
+.equipment-list__item_status_maintenance strong {
+  color: #e74c3c;
+}
+
+.message-card {
+  position: sticky;
+  top: 130px;
+  height: fit-content;
+  z-index: -1;
+}
+
+.message {
+  background: #313131;
+  color: #cacaca;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 16px 0;
+  border-left: 4px solid #f39c12;
+}
+
+.message__text {
+  margin: 0 0 8px 0;
+  font-style: italic;
+}
+
+.message__author {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.console {
+  background: #181818;
+  color: #b69d7b;
+  border-radius: 4px;
+  border: 2px solid #97743c;
+  padding: 8px;
+  margin: 0;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.console__code {
+  font-family: "IBM Plex Mono", monospace;
+  margin: 0;
+}
+
+.footer {
+  background-color: #1f1f1f;
+  color: #cacaca;
+  padding: 20px;
+  text-align: center;
+  border-top: 2px solid #525252;
+  margin-top: auto;
+}
+
+.footer__text {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid #525252;
+}
+
+.table__head,
+.table__body,
+.table__row {
+  display: contents;
+}
+
+.table__cell {
+  padding: 8px;
+  border-bottom: 1px solid #525252;
+  text-align: left;
+}
+
+.table__header {
+  background-color: #575757;
+}
+
+.table__row:nth-child(even) .table__cell {
+  background-color: #353535;
+}
+
+.table__row:nth-child(odd) .table__cell {
+  background-color: #272727;
+}
+
+
+.task-form {
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.task-form__label {
+  color: #cacaca;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.task-form__input {
+  background: #1f1f1f;
+  border: 2px solid #525252;
+  border-radius: 8px;
+  padding: 8px 10px;
+  color: #ecf0f1;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.task-form__input:focus {
+  outline: none;
+  border-color: #f39c12;
+}
+
+.task-form__button {
+  background: #313131;
+  color: #ecf0f1;
+  border: 2px solid #525252;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+}
+
+.task-form__button:hover {
+  background: #1f1f1f;
+  border-color: #f39c12;
+  color: #f39c12;
+}
+
+.task-list {
+  list-style: none;
+  display: grid;
+}
+
+.task-list__item {
+  background: #272727;
+  color: #cacaca;
+  border: 2px solid #525252;
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.task-list__text {
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+}
+
+.task-list__delete {
+  background: none;
+  border: 2px solid #e74c3c;
+  color: #e74c3c;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-weight: 600;
+}
+
+.task-list__delete:hover {
+  background: #e74c3c;
+  color: #181818;
+}
+
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #ccc;
+    border-top-color: #000;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.loader {
+  display: none;
+  margin: 20px auto;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #ccc;
+  border-top-color: #000;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  display: none;
+  color: red;
+  margin-top: 20px;
+}
+
+.todos-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  display: none;
+  background: #1f1f1f;
+  color: #eaeaea;
+  border: 2px solid #525252;
+}
+
+.todos-table th,
+.todos-table td {
+  border: 1px solid #525252;
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.todos-table th {
+  background: #313131;
+  font-weight: 600;
+}
+
+.todos-table tr:nth-child(even) {
+  background: #272727;
+}

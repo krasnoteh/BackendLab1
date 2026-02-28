@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Панель управлеия диспетчера - состояние оборудования и задания">
+  <meta name="keywords" content="MES, производство, оборудование, задачи, сообщения">
+  <title>Панель управлеия диспетчера</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="scripts/main.js" defer></script>
+</head>
+<body class="page">
+  <header class="header">
+    <h1 class="header__title">Панель управления диспетчера</h1>
+    <nav class="nav">
+      <a href="index.html" class="nav__link">Главная</a>
+      <span class="nav__separator">|</span>
+      <a href="tasks.html" class="nav__link">Задачи</a>
+      <span class="nav__separator">|</span>
+      <a href="equipment.html" class="nav__link">Оборудование</a>
+      <span class="nav__separator">|</span>
+      <a href="messages.html" class="nav__link">Сообщения</a>
+      <span class="nav__separator">|</span>
+      <a href="reports.html" class="nav__link">Отчёты</a>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <main class="main">
+        <section class="card">
+            <h2 class="card__title">Сообщения</h2>
+              <form class="task-form filters">
+                  <label class="task-form__label">
+                      User ID:
+                      <input type="number" min="1" class="task-form__input user-id">
+                  </label>
+
+                  <label class="task-form__label">
+                      Completed:
+                      <select class="task-form__input completed">
+                          <option value="">—</option>
+                          <option value="true">true</option>
+                          <option value="false">false</option>
+                      </select>
+                  </label>
+
+                  <button type="button" class="task-form__button fetch-btn">Найти</button>
+              </form>
+
+              <div class="loader spinner"></div>
+
+              <div class="error"></div>
+
+              <table class="todos-table">
+                  <thead>
+                      <tr>
+                          <th>ID</th>
+                          <th>UserId</th>
+                          <th>Title</th>
+                          <th>Completed</th>
+                      </tr>
+                  </thead>
+                  <tbody class="todos-body"></tbody>
+              </table>
+
+              <template class="todo-row-template">
+                  <tr>
+                      <td class="todo-id"></td>
+                      <td class="todo-userid"></td>
+                      <td class="todo-title"></td>
+                      <td class="todo-completed"></td>
+                  </tr>
+              </template>
+
+              <script src="scripts/reqests.js"></script>
+          </body>
+        </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p class="footer__text">
+      &copy; 2025 MES Dashboard | Версия 1.0 | 
+      <span id="current-time"></span>
+      <span id="load-time"></span>
+    </p>
+  </footer>
+</body>
+</html>
