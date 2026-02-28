@@ -1,0 +1,33 @@
+<html lang='ru'>
+  {{> head }}
+  <body class='page'>
+    {{> header}}
+
+    <div class='layout'>
+      <main class='main'>
+        <section class='card'>
+          <h2 class='card__title'>Задачи</h2>
+          <form id='task-form' class='task-form'>
+            <label class='task-form__label'>
+              Задача:
+              <input
+                type='text'
+                id='task-input'
+                name='task'
+                required
+                minlength='3'
+                maxlength='100'
+                class='task-form__input'
+              />
+            </label>
+            <button type='submit' class='task-form__button'>Добавить задачу</button>
+          </form>
+          <ul id='task-list' class='.task-list'></ul>
+          <script src='scripts/tasts.js'></script>
+        </section>
+      </main>
+    </div>
+
+    {{> footer}}
+  </body>
+</html>

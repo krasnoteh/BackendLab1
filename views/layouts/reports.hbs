@@ -1,0 +1,25 @@
+<html lang='ru'>
+  {{> head }}
+  <body class='page'>
+   {{> header }}
+
+    <div class='layout'>
+      <main class='main'>
+        <section class='card'>
+          <h2 class='card__title'>Отчёты</h2>
+          {{#if isAuth}}
+            <div>
+              <a> Вы вошли </a>
+            </div>
+          {{else}}
+            <div>
+              <a> Вы не вошли </a>
+            </div>
+          {{/if}}
+        </section>
+      </main>
+    </div>
+
+    {{> footer }}
+  </body>
+</html>

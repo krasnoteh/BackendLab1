@@ -1,0 +1,47 @@
+<html lang='ru'>
+  {{> head }}
+  <body class='page'>
+    {{> header}}
+
+    <div class='layout'>
+      <main class='main'>
+        <section class='card card_type_highlighted'>
+          <h2 class='card__title'>Задача на сегодня</h2>
+          <p class='card__text'>
+            Произвести
+            <strong class='card__accent'>500</strong>
+            деталей типа
+            <strong class='card__accent'>А-12</strong>.
+            <em>Обратите внимание</em>
+            на качество сырья - партия новая.
+            <del>Смену начать в 9:00</del>
+            <ins>Смену начать в 8:00</ins>
+            по просьбе начальника цеха.
+          </p>
+          <figure class='card__figure'>
+            <img src='image.png' alt='A-12' class='card__image' />
+            <figcaption class='card__caption'>Чертеж детали А-12</figcaption>
+          </figure>
+        </section>
+
+        <section class='card'>
+          <h2 class='card__title'>Состояние оборудования</h2>
+          <ul class='equipment-list'>
+            {{> machine name="Фрезерный станок №1" state="Работает" class="equipment-list__item_status_working"}}
+            {{> machine name="Фрезерный станок №2" state="Простаивает" class="equipment-list__item_status_idle"}}
+            {{> machine name="Шлифовальный станок №1" state="Работает" class="equipment-list__item_status_working"}}
+            {{> machine name="Токарный станок №1" state="На обслуживании" class="equipment-list__item_status_maintenance"}}
+        </section>
+      </main>
+      <aside class='sidebar'>
+        <section class='card message-card'>
+          <h2 class='card__title'>Сообщения</h2>
+          {{> message message="«На фрезере 2 усилился шум при работе»" author="- Иван Петров, мастер"}}
+          {{> message message="«Закончили калибровку токарного станка, можно запускать»" author="- Анна Смирнова, инженер"}}
+        </section>
+      </aside>
+    </div>
+
+    {{> footer}}
+  </body>
+</html>
